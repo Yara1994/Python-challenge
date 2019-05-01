@@ -66,7 +66,6 @@ output_path = os.path.join("..", "PyBank", "Financial_Analysis.txt")
 
 with open(output_path, "w") as file:
     
-    file.write("\n")
     file.write("Financial Analysis")
     file.write("\n")
     file.write("----------------------------")
