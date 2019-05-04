@@ -14,7 +14,7 @@ total_amount = []
 average_of_change = []
 
 
-#open file to read and get information out of it    
+# Open file to read and get information out of it    
 
 with open(csvPyBank, "r", newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
