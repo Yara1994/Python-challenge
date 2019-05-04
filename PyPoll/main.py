@@ -64,48 +64,55 @@ with open(csvPyPoll, "r", newline = "") as csvfile:
     
 # Print all statements:
 
-print(f"""Election Results
+# print(f"""Election Results
+# ---------------------------
+# Total Votes: {total_votes}
+# ---------------------------
+# Khan: {candidate_vote_percentage["Khan"]:.3f}% ({candidate_votes["Khan"]})
+# Correy: {candidate_vote_percentage["Correy"]:.3f}% ({candidate_votes["Correy"]})
+# Li: {candidate_vote_percentage["Li"]:.3f}% ({candidate_votes["Li"]})
+# O'Tooley: {candidate_vote_percentage["O'Tooley"]:.3f}% ({candidate_votes["O'Tooley"]})
+# ---------------------------
+# Winner: {winner}
+# ---------------------------
+# """)   
+
+
+with open("Election_Results.txt", "w") as file:
+    
+    file.write("Election Results")
+    file.write("\n")
+    file.write("---------------------------")
+    file.write("\n")
+    file.write(f"Total Votes: {total_votes}")
+    file.write("\n")
+    file.write(f"---------------------------")
+    file.write("\n") 
+
+    print(f"""
+Election Results
 ---------------------------
 Total Votes: {total_votes}
+---------------------------""")
+
+    for person in candidate_votes:
+        votes = candidate_votes[person]
+        percentage = candidate_vote_percentage[person]
+       
+        print(f"{person}: {percentage:.3f}% ({votes})")
+        
+        file.write(f"{person}: {percentage:.3f}% ({votes})")
+        file.write("\n")
+
+    print(f"""
 ---------------------------
-Khan: {candidate_vote_percentage["Khan"]:.3f}% ({candidate_votes["Khan"]})
-Correy: {candidate_vote_percentage["Correy"]:.3f}% ({candidate_votes["Correy"]})
-Li: {candidate_vote_percentage["Li"]:.3f}% ({candidate_votes["Li"]})
-O'Tooley: {candidate_vote_percentage["O'Tooley"]:.3f}% ({candidate_votes["O'Tooley"]})
+Winner:{winner}
 ---------------------------
-Winner: {winner}
----------------------------
-""")   
-
-# Output
-
-output_path = os.path.join("..", "PyPoll", "Election_Results.txt")
-
-# Printing results in new file we made
-
-file = open("Election_Results.txt", "w")
-    
-file.write("Election Results")
-file.write("\n")
-file.write("---------------------------")
-file.write("\n")
-file.write(f"Total Votes: {total_votes}")
-file.write("\n")
-file.write(f"---------------------------")
-file.write("\n") 
-x = candidate_vote_percentage["Khan"]
-print(x)
-y = f"{x:.3f}"
-print(y)
-file.write(f"Khan: {y}%")
-#file.write("\n")
-#file.write(f"Correy: {candidate_vote_percentage["Correy"]:.3f}% ({candidate_votes["Correy"]})")
-#file.write("\n")
-#file.write(f"Li: {candidate_vote_percentage["Li"]:.3f}% ({candidate_votes["Li"]})")
-#file.write("\n")
-#file.write(f"O'Tooley: {candidate_vote_percentage["O'Tooley"]:.3f}% ({candidate_votes["O'Tooley"]})")
-file.write("\n")
-file.write("---------------------------")
-file.write("\n")
-file.write(f"Winner: {winner}")
+        """)
+        
+    file.write("---------------------------")
+    file.write("\n")
+    file.write(f"Winner: {winner}")
+    file.write("\n")
+    file.write("---------------------------")
 
