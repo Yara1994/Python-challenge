@@ -61,21 +61,6 @@ with open(csvPyPoll, "r", newline = "") as csvfile:
             winner_votes = candidate_votes[candidate]
             winner = candidate
 
-    
-# Print all statements:
-
-# print(f"""Election Results
-# ---------------------------
-# Total Votes: {total_votes}
-# ---------------------------
-# Khan: {candidate_vote_percentage["Khan"]:.3f}% ({candidate_votes["Khan"]})
-# Correy: {candidate_vote_percentage["Correy"]:.3f}% ({candidate_votes["Correy"]})
-# Li: {candidate_vote_percentage["Li"]:.3f}% ({candidate_votes["Li"]})
-# O'Tooley: {candidate_vote_percentage["O'Tooley"]:.3f}% ({candidate_votes["O'Tooley"]})
-# ---------------------------
-# Winner: {winner}
-# ---------------------------
-# """)   
 
 
 with open("Election_Results.txt", "w") as file:
