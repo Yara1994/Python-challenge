@@ -32,32 +32,3 @@ The Python script analyzes the votes and calculates each of the following:
 
 * The winner of the election based on popular vote.
 
-### PyBoss(Bonus)
-
-Python Script to convert employee records(provided) to required format. 
-
-The required conversions are as follows:
-
-* The Name column should be split into separate First Name and Last Name columns.
-
-* The DOB data should be re-written into MM/DD/YYYY format.
-
-* The SSN data should be re-written such that the first five numbers are hidden from view.
-
-* The State data should be re-written as simple two-letter abbreviations.
-
-### PyParagraph(Bonus)
-
-Python script to automate the analysis of passages. The script does the following:
-
-Import a text file filled with a paragraph of your choosing.
-
-Assess the passage for each of the following:
-
-* Approximate word count
-
-* Approximate sentence count
-
-* Approximate letter count (per word)
-
-* Average sentence length (in words)
